@@ -96,6 +96,17 @@ function Pomodoro() {
     });
   }
 
+  /* 
+   * All functions provided by Thinkful are above.
+   *
+   * All functions written by Callie are below. 
+   */
+
+  function changeFocusDuration({ target }) {
+    const buttonId = target.getAttribute("data-testid");
+    buttonId === "increase-focus" ? focusDuration += 1 : focusDuration -= 1;
+  }
+
   return (
     <div className="pomodoro">
       <div className="row">
