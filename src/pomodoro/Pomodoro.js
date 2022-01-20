@@ -102,8 +102,9 @@ function Pomodoro() {
    * All functions written by Callie are below. 
    */
 
-  function changeFocusDuration({ target }) {
-    const buttonId = target.getAttribute("data-testid");
+  function changeFocusDuration(e) {
+    e.preventDefault();
+    const buttonId = e.target.getAttribute("data-testid");
     buttonId === "increase-focus" ? focusDuration += 1 : focusDuration -= 1;
   }
 
@@ -126,7 +127,7 @@ function Pomodoro() {
                 type="button"
                 className="btn btn-secondary"
                 data-testid="decrease-focus"
-                onClick={changeFocusDuration()}
+                onClick={changeFocusDuration}
               >
                 <span className="oi oi-minus" />
               </button>
@@ -135,7 +136,7 @@ function Pomodoro() {
                 type="button"
                 className="btn btn-secondary"
                 data-testid="increase-focus"
-                onClick={changeFocusDuration()}
+                onClick={changeFocusDuration}
               >
                 <span className="oi oi-plus" />
               </button>
