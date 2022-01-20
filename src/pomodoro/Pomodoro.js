@@ -194,11 +194,11 @@ function Pomodoro() {
           <div className="col">
             {/* TODO: Update message below to include current session (Focusing or On Break) total duration */}
             <h2 data-testid="session-title">
-              {session?.label} for 25:00 minutes
+              {/* {session.label} for 25:00 minutes */}
             </h2>
             {/* TODO: Update message below correctly format the time remaining in the current session */}
             <p className="lead" data-testid="session-sub-title">
-              {session?.timeRemaining} remaining
+              {/* {session.timeRemaining} remaining */}
             </p>
           </div>
         </div>
