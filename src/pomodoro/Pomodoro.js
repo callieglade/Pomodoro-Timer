@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import classNames from "../utils/class-names";
 import useInterval from "../utils/useInterval";
+import FocusDuration from "./FocusDuration";
 
 // These functions are defined outside of the component to ensure they do not have access to state
 // and are, therefore, more likely to be pure.
@@ -103,6 +104,10 @@ function Pomodoro() {
             <span className="input-group-text" data-testid="duration-focus">
               {/* TODO: Update this text to display the current focus session duration */}
               Focus Duration: 25:00
+              <FocusDuration
+                focusDuration = {focusDuration}
+                isTimerRunning = {isTimerRunning}
+              />
             </span>
             <div className="input-group-append">
               {/* TODO: Implement decreasing focus duration and disable during a focus or break session */}
