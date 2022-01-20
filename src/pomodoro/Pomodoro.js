@@ -55,8 +55,8 @@ function Pomodoro() {
   const [session, setSession] = useState(null);
 
   // ToDo: Allow the user to adjust the focus and break duration.
-  const focusDuration = 25;
-  const breakDuration = 5;
+  let focusDuration = 25;
+  let breakDuration = 5;
 
   /**
    * Custom hook that invokes the callback function every second
@@ -105,7 +105,7 @@ function Pomodoro() {
   function changeFocusDuration(e) {
     e.preventDefault();
     const buttonId = e.target.getAttribute("data-testid");
-    buttonId === "increase-focus" ? focusDuration += 1 : focusDuration -= 1;
+    buttonId === "increase-focus" ? focusDuration += 5 : focusDuration -= 5;
   }
 
   return (
