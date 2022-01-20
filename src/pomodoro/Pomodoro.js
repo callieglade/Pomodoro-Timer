@@ -126,6 +126,7 @@ function Pomodoro() {
                 type="button"
                 className="btn btn-secondary"
                 data-testid="decrease-focus"
+                onClick={changeFocusDuration()}
               >
                 <span className="oi oi-minus" />
               </button>
@@ -134,6 +135,7 @@ function Pomodoro() {
                 type="button"
                 className="btn btn-secondary"
                 data-testid="increase-focus"
+                onClick={changeFocusDuration()}
               >
                 <span className="oi oi-plus" />
               </button>
