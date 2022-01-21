@@ -128,6 +128,13 @@ function Pomodoro() {
     }
   }
 
+  function stopSession() {
+    setIsTimerRunning(false);
+    setSession((prevStateSession) => {
+      if (prevStateSession !== null) prevStateSession = null;
+    });
+  }
+
   return (
     <div className="pomodoro">
       <div className="row">
@@ -175,6 +182,7 @@ function Pomodoro() {
               className="btn btn-secondary"
               data-testid="stop"
               title="Stop the session"
+              onClick={stopSession}
             >
               <span className="oi oi-media-stop" />
             </button>
