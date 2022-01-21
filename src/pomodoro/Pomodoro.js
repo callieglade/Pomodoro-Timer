@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import classNames from "../utils/class-names";
 import useInterval from "../utils/useInterval";
+import { minutesToDuration } from "../utils/duration";
 import FocusDuration from "./FocusDuration";
 
 // These functions are defined outside of the component to ensure they do not have access to state
@@ -55,8 +56,8 @@ function Pomodoro() {
   const [session, setSession] = useState(null);
 
   // ToDo: Allow the user to adjust the focus and break duration.
-  let focusDuration = 25;
-  let breakDuration = 5;
+  const [focusDuration, setFocusDuration] = useState(25);
+  const [breakDuration, setBreakDuration] = useState(5);
 
   /**
    * Custom hook that invokes the callback function every second
@@ -115,11 +116,7 @@ function Pomodoro() {
           <div className="input-group input-group-lg mb-2">
             <span className="input-group-text" data-testid="duration-focus">
               {/* TODO: Update this text to display the current focus session duration */}
-              Focus Duration: 25:00
-              <FocusDuration
-                focusDuration = {focusDuration}
-                isTimerRunning = {isTimerRunning}
-              />
+              Focus Duration: {minutesToDuration(focusDuration)}
             </span>
             <div className="input-group-append">
               {/* TODO: Implement decreasing focus duration and disable during a focus or break session */}
