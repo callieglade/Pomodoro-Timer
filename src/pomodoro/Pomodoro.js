@@ -115,6 +115,18 @@ function Pomodoro() {
     }
   }
 
+  const changeBreakDuration = (e) => {
+    e.preventDefault();
+    if (!isTimerRunning) {
+      const buttonId = e.target.getAttribute("data-testid");
+      if (buttonId === "increase-break") {
+        setBreakDuration(currentBreakDuration => Math.min(15, (currentBreakDuration + 5)));
+      } else {
+        setBreakDuration(currentBreakDuration => Math.max(1, (currentBreakDuration - 5)));
+      }
+    }
+  }
+
   return (
     <div className="pomodoro">
       <div className="row">
