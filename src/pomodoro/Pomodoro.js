@@ -103,7 +103,7 @@ function Pomodoro() {
    * All functions written by Callie are below. 
    */
 
-  function changeFocusDuration(e) {
+  const changeFocusDuration = (e) => {
     e.preventDefault();
     if (!isTimerRunning) {
       const buttonId = e.target.getAttribute("data-testid");
