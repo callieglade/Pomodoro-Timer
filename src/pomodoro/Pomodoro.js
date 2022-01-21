@@ -181,7 +181,9 @@ function Pomodoro() {
           </div>
         </div>
       </div>
-      <Session />
+      <Session 
+        session = {session}
+      />
     </div>
   );
 }

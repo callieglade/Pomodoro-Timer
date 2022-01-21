@@ -1,6 +1,6 @@
 import React from "react";
 
-function Session() {
+function Session({ session }) {
   return (
     <div>
       {/* TODO: This area should show only when there is an active focus or break - i.e. the session is running or is paused */}
