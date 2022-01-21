@@ -108,9 +108,9 @@ function Pomodoro() {
     if (!isTimerRunning) {
       const buttonId = e.target.getAttribute("data-testid");
       if (buttonId === "increase-focus") {
-        setFocusDuration(currentFocusDuration => currentFocusDuration + 5);
+        setFocusDuration(currentFocusDuration => Math.min(60, (currentFocusDuration + 5)));
       } else {
-        setFocusDuration(currentFocusDuration => currentFocusDuration - 5);
+        setFocusDuration(currentFocusDuration => Math.max(5, (currentFocusDuration - 5)));
       }
     }
   }
