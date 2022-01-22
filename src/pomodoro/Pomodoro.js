@@ -81,6 +81,7 @@ function Pomodoro() {
   function playPause() {
     setIsTimerRunning((prevState) => {
       const nextState = !prevState;
+      console.log(nextState);
       if (nextState) {
         setSession((prevStateSession) => {
           // If the timer is starting and the previous session is null,
@@ -130,9 +131,7 @@ function Pomodoro() {
 
   function stopSession() {
     setIsTimerRunning(false);
-    setSession((prevStateSession) => {
-      if (prevStateSession !== null) prevStateSession = null;
-    });
+    setSession(null);
   }
 
   return (
@@ -191,6 +190,7 @@ function Pomodoro() {
       </div>
       <Session 
         session = {session}
+        focusDuration = {focusDuration}
       />
     </div>
   );
