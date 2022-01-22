@@ -1,7 +1,8 @@
 import React from "react";
+import Paused from "./Paused";
 import { minutesToDuration, secondsToDuration } from "../utils/duration";
 
-function Session({ session, focusDuration, breakDuration }) {
+function Session({ session, focusDuration, breakDuration, isTimerRunning }) {
   if (!session) return null;
 
   const duration = (session.label === "Focusing") ? focusDuration : breakDuration;
@@ -31,6 +32,7 @@ function Session({ session, focusDuration, breakDuration }) {
           </p>
         </div>
       </div>
+      <Paused session={session} isTimerRunning={isTimerRunning} />
       <div className="row mb-2">
         <div className="col">
           <div className="progress" style={{ height: "20px" }}>
