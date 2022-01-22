@@ -133,6 +133,11 @@ function Pomodoro() {
     setSession(null);
   }
 
+  const disableButton = (state) => {
+    if (!state) return true;
+    return false;
+  }
+
   return (
     <div className="pomodoro">
       <div className="row">
@@ -181,6 +186,7 @@ function Pomodoro() {
               data-testid="stop"
               title="Stop the session"
               onClick={stopSession}
+              disabled={disableButton(session)}
             >
               <span className="oi oi-media-stop" />
             </button>
