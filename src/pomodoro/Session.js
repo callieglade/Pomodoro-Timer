@@ -3,6 +3,17 @@ import { minutesToDuration, secondsToDuration } from "../utils/duration";
 
 function Session({ session, focusDuration }) {
   if (!session) return null;
+
+  function progressPercent() {
+    const remaining = session.timeRemaining;
+    const durationInSeconds = focusDuration * 60;
+    const timeProgressed = durationInSeconds - remaining;
+    const percent = Math.round((timeProgressed / durationInSeconds) * 100);
+    return percent;
+  }
+
+  const style = { width: `${progressPercent()}%`}
+  
   return (
     <div>
       {/* TODO: This area should show only when there is an active focus or break - i.e. the session is running or is paused */}
@@ -26,8 +37,8 @@ function Session({ session, focusDuration }) {
               role="progressbar"
               aria-valuemin="0"
               aria-valuemax="100"
-              aria-valuenow="0" // TODO: Increase aria-valuenow as elapsed time increases
-              style={{ width: "0%" }} // TODO: Increase width % as elapsed time increases
+              aria-valuenow={progressPercent()} // TODO: Increase aria-valuenow as elapsed time increases
+              style={style} // TODO: Increase width % as elapsed time increases
             />
           </div>
         </div>
