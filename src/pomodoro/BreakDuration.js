@@ -1,7 +1,7 @@
 import React from "react";
 import { minutesToDuration } from "../utils/duration";
 
-function BreakDuration({ breakDuration, changeBreakDuration }) {
+function BreakDuration({ breakDuration, changeBreakDuration, session }) {
     return (
       <div className="input-group input-group-lg mb-2">
         <span className="input-group-text" data-testid="duration-break">
@@ -15,6 +15,7 @@ function BreakDuration({ breakDuration, changeBreakDuration }) {
             className="btn btn-secondary"
             data-testid="decrease-break"
             onClick={changeBreakDuration}
+            disabled={session}
           >
             <span className="oi oi-minus" data-testid="decrease-break" />
           </button>
@@ -24,6 +25,7 @@ function BreakDuration({ breakDuration, changeBreakDuration }) {
             className="btn btn-secondary"
             data-testid="increase-break"
             onClick={changeBreakDuration}
+            disabled={session}
           >
             <span className="oi oi-plus" data-testid="increase-break" />
           </button>

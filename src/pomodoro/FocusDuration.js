@@ -1,7 +1,7 @@
 import React from "react";
 import { minutesToDuration } from "../utils/duration";
 
-function FocusDuration({ focusDuration, changeFocusDuration }) {
+function FocusDuration({ focusDuration, changeFocusDuration, session }) {
     return (
       <div className="input-group input-group-lg mb-2">
         <span className="input-group-text" data-testid="duration-focus">
@@ -15,6 +15,7 @@ function FocusDuration({ focusDuration, changeFocusDuration }) {
             className="btn btn-secondary"
             data-testid="decrease-focus"
             onClick={changeFocusDuration}
+            disabled={session}
           >
             <span className="oi oi-minus" data-testid="decrease-focus" />
           </button>
@@ -24,6 +25,7 @@ function FocusDuration({ focusDuration, changeFocusDuration }) {
             className="btn btn-secondary"
             data-testid="increase-focus"
             onClick={changeFocusDuration}
+            disabled={session}
           >
             <span className="oi oi-plus" data-testid="increase-focus"/>
           </button>

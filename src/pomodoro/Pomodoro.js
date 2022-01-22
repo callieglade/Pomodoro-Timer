@@ -133,11 +133,6 @@ function Pomodoro() {
     setSession(null);
   }
 
-  const disableButton = (state) => {
-    if (!state) return true;
-    return false;
-  }
-
   return (
     <div className="pomodoro">
       <div className="row">
@@ -145,6 +140,7 @@ function Pomodoro() {
           <FocusDuration 
             focusDuration = {focusDuration}
             changeFocusDuration = {changeFocusDuration}
+            session = {session}
           />
         </div>
         <div className="col">
@@ -152,6 +148,7 @@ function Pomodoro() {
             <BreakDuration
               breakDuration = {breakDuration}
               changeBreakDuration = {changeBreakDuration}
+              session = {session}
             />
           </div>
         </div>
@@ -186,7 +183,7 @@ function Pomodoro() {
               data-testid="stop"
               title="Stop the session"
               onClick={stopSession}
-              disabled={disableButton(session)}
+              disabled={!session}
             >
               <span className="oi oi-media-stop" />
             </button>
