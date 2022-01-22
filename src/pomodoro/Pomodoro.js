@@ -191,6 +191,7 @@ function Pomodoro() {
       <Session 
         session = {session}
         focusDuration = {focusDuration}
+        breakDuration = {breakDuration}
       />
     </div>
   );
