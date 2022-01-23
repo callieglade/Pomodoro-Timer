@@ -12,22 +12,22 @@ function BreakDuration({ breakDuration, changeBreakDuration, session }) {
           {/* TODO: Implement decreasing break duration and disable during a focus or break session */}
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-secondary decrease-break"
             data-testid="decrease-break"
             onClick={changeBreakDuration}
             disabled={session}
           >
-            <span className="oi oi-minus" data-testid="decrease-break" />
+            <span className="oi oi-minus decrease-break" />
           </button>
           {/* TODO: Implement increasing break duration and disable during a focus or break session */}
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-secondary increase-break"
             data-testid="increase-break"
             onClick={changeBreakDuration}
             disabled={session}
           >
-            <span className="oi oi-plus" data-testid="increase-break" />
+            <span className="oi oi-plus increase-break" />
           </button>
         </div>
       </div>

@@ -12,22 +12,22 @@ function FocusDuration({ focusDuration, changeFocusDuration, session }) {
           {/* TODO: Implement decreasing focus duration and disable during a focus or break session */}
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-secondary decrease-focus"
             data-testid="decrease-focus"
             onClick={changeFocusDuration}
             disabled={session}
           >
-            <span className="oi oi-minus" data-testid="decrease-focus" />
+            <span className="oi oi-minus decrease-focus" />
           </button>
           {/* TODO: Implement increasing focus duration and disable during a focus or break session */}
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-secondary increase-focus"
             data-testid="increase-focus"
             onClick={changeFocusDuration}
             disabled={session}
           >
-            <span className="oi oi-plus" data-testid="increase-focus"/>
+            <span className="oi oi-plus increase-focus"/>
           </button>
         </div>
       </div>

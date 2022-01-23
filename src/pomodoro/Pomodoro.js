@@ -107,8 +107,8 @@ function Pomodoro() {
   const changeFocusDuration = (e) => {
     e.preventDefault();
     if (!isTimerRunning) {
-      const buttonId = e.target.getAttribute("data-testid");
-      if (buttonId === "increase-focus") {
+      const buttonClasses = e.target.classList;
+      if (buttonClasses.contains("increase-focus")) {
         setFocusDuration(currentFocusDuration => Math.min(60, (currentFocusDuration + 5)));
       } else {
         setFocusDuration(currentFocusDuration => Math.max(5, (currentFocusDuration - 5)));
@@ -119,8 +119,8 @@ function Pomodoro() {
   const changeBreakDuration = (e) => {
     e.preventDefault();
     if (!isTimerRunning) {
-      const buttonId = e.target.getAttribute("data-testid");
-      if (buttonId === "increase-break") {
+      const buttonClasses = e.target.classList;
+      if (buttonClasses.contains("increase-break")) {
         setBreakDuration(currentBreakDuration => Math.min(15, (currentBreakDuration + 1)));
       } else {
         setBreakDuration(currentBreakDuration => Math.max(1, (currentBreakDuration - 1)));
